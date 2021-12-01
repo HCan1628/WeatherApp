@@ -8,9 +8,14 @@ function HavaDurumu(props) {
   }
   return (
     <div>
-      <h3>{weather.name}</h3>
-      <h4>{weather.weather.map((data) => data.description).join(",")}</h4>
-      <p>{weather.main.temp}°C</p>
+      <h3>{weather.name.toUpperCase()}</h3>
+      <h4>
+        {weather.weather
+          .map((data) => data.description)
+          .join(",")
+          .toUpperCase()}
+      </h4>
+      <p>{Math.floor(weather.main.temp)} °C</p>
       <p>{new Date(weather.dt * 1000).toLocaleString()}</p>
     </div>
   );
